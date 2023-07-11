@@ -245,6 +245,7 @@ static Monitor *systraytomon(Monitor *m);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void togglebar(const Arg *arg);
+static void toggletopbar(const Arg *arg);
 static void togglefloating(const Arg *arg);
 static void togglefullscr(const Arg *arg);
 static void toggletag(const Arg *arg);
@@ -1808,6 +1809,15 @@ setmfact(const Arg *arg)
 	if (selmon->pertag->curtag == 0) {
 		selmon->pertag->mfacts[0] = f;
 	}
+	arrange(selmon);
+}
+
+void
+toggletopbar(const Arg *arg)
+{
+    selmon->topbar = !selmon->topbar;
+	updatebarpos(selmon);
+	XMoveResizeWindow(dpy, selmon->barwin, selmon->wx, selmon->by, selmon->ww, bh);
 	arrange(selmon);
 }
 
