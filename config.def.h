@@ -106,14 +106,14 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_x,      incrigaps,      {.i = -1 } },
 	{ MODKEY,                       XK_c,      incrogaps,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_c,      incrogaps,      {.i = -1 } },
-	/* { MODKEY|Mod4Mask,              XK_6,      incrihgaps,     {.i = +1 } }, */
-	/* { MODKEY|Mod4Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } }, */
-	/* { MODKEY|Mod4Mask,              XK_7,      incrivgaps,     {.i = +1 } }, */
-	/* { MODKEY|Mod4Mask|ShiftMask,    XK_7,      incrivgaps,     {.i = -1 } }, */
-	/* { MODKEY|Mod4Mask,              XK_8,      incrohgaps,     {.i = +1 } }, */
-	/* { MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } }, */
-	/* { MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } }, */
-	/* { MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } }, */
+	{ 0,                            0,         incrihgaps,     {.i = +1 } },
+	{ 0,                            0,         incrihgaps,     {.i = -1 } },
+	{ 0,                            0,         incrivgaps,     {.i = +1 } },
+	{ 0,                            0,         incrivgaps,     {.i = -1 } },
+	{ 0,                            0,         incrohgaps,     {.i = +1 } },
+	{ 0,                            0,         incrohgaps,     {.i = -1 } },
+	{ 0,                            0,         incrovgaps,     {.i = +1 } },
+	{ 0,                            0,         incrovgaps,     {.i = -1 } },
 	{ MODKEY,                       XK_a,      togglegaps,     {0} },
 	{ MODKEY|ShiftMask,             XK_a,      defaultgaps,    {0} },
 
