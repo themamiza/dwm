@@ -39,11 +39,13 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "st",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	/* class           instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "Gimp",          NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Pavucontrol",   NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Qalculate-gtk", NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Firefox",       NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+	{ "st",            NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,            NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -194,7 +196,6 @@ static const Key keys[] = {
 	{ XK_NO_MOD,           XF86XK_MonBrightnessUp,   spawn, SHCMD("xbacklight -inc 10") },
 	{ XK_NO_MOD,           XK_F6,                    spawn, SHCMD("(synclient | grep 'Touchpad.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
 	{ XK_NO_MOD,           XF86XK_Calculator,        spawn, SHCMD("qalculate-gtk") },
-
 };
 
 /* button definitions */
