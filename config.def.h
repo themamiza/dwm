@@ -100,6 +100,7 @@ static const Key keys[] = {
 	{ MODKEY,              XK_d,            spawn,          { .v = dmenucmd }  },
 	{ MODKEY,              XK_Return,       spawn,          SHCMD("$TERMINAL") },
 	{ MODKEY,              XK_w,            spawn,          SHCMD("$BROWSER")  },
+	{ MODKEY|ShiftMask,    XK_w,            spawn,          SHCMD("brave --incognito")  },
 	{ MODKEY,              XK_e,            spawn,          SHCMD("emacs")     },
 	{ MODKEY,              XK_equal,        spawn,          SHCMD("pamixer --allow-boost -i  5; kill -44 $(pidof dwmblocks)")  },
 	{ MODKEY|ShiftMask,    XK_equal,        spawn,          SHCMD("pamixer --allow-boost -i 15; kill -44 $(pidof dwmblocks)")  },
