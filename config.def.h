@@ -115,6 +115,7 @@ static const Key keys[] = {
 	{ ShiftMask,           XK_Print,        spawn,          SHCMD("scrot -s ~/pix/$(date '+%y%m%d-%H%M-%S').png") },
 	{ MODKEY,              XK_n,            spawn,          SHCMD("find  ~/.local/share/wallpapers | shuf | sxiv -bit") },
 	{ MODKEY|ShiftMask,    XK_n,            spawn,          SHCMD("setbg ~/.local/share/wallpapers ") },
+	{ MODKEY|ShiftMask,    XK_slash,        spawn,          SHCMD("switchxkbmap") },
 	{ MODKEY,              XK_BackSpace,    spawn,          SHCMD("sysact") },
 	{ MODKEY,              XK_r,            spawn,          SHCMD("$TERMINAL -e lfub -single") },
 	{ MODKEY|ShiftMask,    XK_h,            spawn,          SHCMD("$TERMINAL -e htop") },
