@@ -196,7 +196,7 @@ static const Key keys[] = {
 	{ XK_NO_MOD,           XF86XK_AudioRaiseVolume,  spawn, SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
 	{ XK_NO_MOD,           XF86XK_MonBrightnessDown, spawn, SHCMD("xbacklight -dec 10") },
 	{ XK_NO_MOD,           XF86XK_MonBrightnessUp,   spawn, SHCMD("xbacklight -inc 10") },
-	{ XK_NO_MOD,           XK_F6,                    spawn, SHCMD("(synclient | grep 'Touchpad.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
+	{ XK_NO_MOD,           XK_F6,                    spawn, SHCMD("touchpad-toggle") },
 	{ XK_NO_MOD,           XF86XK_Calculator,        spawn, SHCMD("qalculate-gtk") },
 };
 
