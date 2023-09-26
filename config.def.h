@@ -113,7 +113,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,    XK_bracketleft,  spawn,          SHCMD("xbacklight -dec 25")  },
 	{ XK_NO_MOD,           XK_Print,        spawn,          SHCMD("scrot    ~/pix/$(date '+%y%m%d-%H%M-%S').png") },
 	{ ShiftMask,           XK_Print,        spawn,          SHCMD("scrot -s ~/pix/$(date '+%y%m%d-%H%M-%S').png") },
-	{ MODKEY,              XK_n,            spawn,          SHCMD("find  ~/.local/share/wallpapers | shuf | sxiv -bit") },
+	{ MODKEY,              XK_n,            spawn,          SHCMD("find  ~/.local/share/wallpapers/* | shuf | nsxiv -bit") },
 	{ MODKEY|ShiftMask,    XK_n,            spawn,          SHCMD("setbg ~/.local/share/wallpapers ") },
 	{ MODKEY|ShiftMask,    XK_slash,        spawn,          SHCMD("switchxkbmap") },
 	{ MODKEY,              XK_BackSpace,    spawn,          SHCMD("sysact") },
