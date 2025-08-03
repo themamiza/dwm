@@ -100,12 +100,12 @@ static const Key keys[] = {
 	/* modifier            key              function        argument */
 	{ MODKEY,              XK_d,            spawn,          { .v = dmenucmd }  },
 	{ MODKEY,              XK_Return,       spawn,          SHCMD("$TERMINAL") },
-	{ AltMask,             XK_Return,       spawn,          SHCMD("tsm") },
+	/* { AltMask,             XK_Return,       spawn,          SHCMD("tsm") }, */ /* TODO: Make a proper tmux handler. */
 	{ MODKEY,              XK_w,            spawn,          SHCMD("$BROWSER")  },
 	{ MODKEY|ShiftMask,    XK_w,            spawn,          SHCMD("brave --incognito")  },
 	{ MODKEY,              XK_e,            spawn,          SHCMD("emacs")     },
-	{ MODKEY|ShiftMask,    XK_v,            spawn,          SHCMD("sshunnel")  },
 	{ MODKEY,              XK_t,            spawn,          SHCMD("Telegram")  },
+	/* { MODKEY|ShiftMask,    XK_v,            spawn,          SHCMD("sshunnel")  }, */ /* TODO: Decide on a proper solution for VPN */
 	{ MODKEY,              XK_equal,        spawn,          SHCMD("[ -x \"$(command -v wpctl)\" ] && wpctl set-volume @DEFAULT_SINK@  5%+ || pamixer --allow-boost -i  5; kill -44 $(pidof dwmblocks)")  },
 	{ MODKEY|ShiftMask,    XK_equal,        spawn,          SHCMD("[ -x \"$(command -v wpctl)\" ] && wpctl set-volume @DEFAULT_SINK@ 15%+ || pamixer --allow-boost -i 15; kill -44 $(pidof dwmblocks)")  },
 	{ MODKEY,              XK_minus,        spawn,          SHCMD("[ -x \"$(command -v wpctl)\" ] && wpctl set-volume @DEFAULT_SINK@  5%- || pamixer --allow-boost -d  5; kill -44 $(pidof dwmblocks)")  },
