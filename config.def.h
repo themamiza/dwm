@@ -120,7 +120,7 @@ static const Key keys[] = {
 	{ MODKEY,              XK_n,            spawn,          SHCMD("find  ~/.local/share/wallpapers/* | shuf | nsxiv -bit") },
 	{ MODKEY|ShiftMask,    XK_n,            spawn,          SHCMD("setbg ~/.local/share/wallpapers ") },
 	{ MODKEY|ShiftMask,    XK_slash,        spawn,          SHCMD("switchxkbmap") },
-	{ MODKEY,              XK_BackSpace,    spawn,          SHCMD("sysact") },
+	{ MODKEY,              XK_BackSpace,    spawn,          SHCMD("fzf-sysact") },
 	{ MODKEY,              XK_r,            spawn,          SHCMD("$TERMINAL -e lfub -single") },
 	{ MODKEY|ShiftMask,    XK_h,            spawn,          SHCMD("$TERMINAL -e htop") },
 	{ MODKEY|ShiftMask,    XK_i,            spawn,          SHCMD("$TERMINAL -e nmtui") },
