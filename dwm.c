@@ -317,6 +317,8 @@ static int screen;
 static int sw, sh;           /* X display screen geometry width, height */
 static int bh, blw = 0;      /* bar height */
 static int lrpad;            /* sum of left and right padding for text */
+static unsigned int launchtags = 0; /* tag(s) that a window spawns in */
+				    /* used to remember where to keep children */
 static int (*xerrorxlib)(Display *, XErrorEvent *);
 static unsigned int numlockmask = 0;
 static void (*handler[LASTEvent]) (XEvent *) = {
@@ -1394,6 +1396,21 @@ manage(Window w, XWindowAttributes *wa)
 		c->mon = selmon;
 		applyrules(c);
 		term = termforwin(c);
+
+		/* keep children with their parents */
+		Window root, parent, *children;
+		unsigned int nchildren;
+		if (XQueryTree(dpy, w, &root, &parent, &children, &nchildren)) {
+			Client *p;
+			if ((p = wintoclient(parent))) {
+				c->mon = p->mon;
+				c->tags = p->tags;
+			} else if (launchtags) {
+				c->tags = launchtags;
+			}
+			if (children)
+				XFree(children);
+		}
 	}
 
 	if (c->x + WIDTH(c) > c->mon->wx + c->mon->ww)
@@ -2372,6 +2389,8 @@ void
 spawn(const Arg *arg)
 {
 	struct sigaction sa;
+
+	launchtags = selmon->tagset[selmon->seltags]; /* save current tags */
 
 	if (arg->v == dmenucmd)
 		dmenumon[0] = '0' + selmon->num;
