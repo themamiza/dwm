@@ -129,7 +129,7 @@ static const Key keys[] = {
 	{ ControlMask|AltMask, XK_u,            spawn,          SHCMD("dmenuunicode") },
 	{ ControlMask|AltMask, XK_m,            spawn,          SHCMD("dmenumount")   },
 	{ ControlMask|AltMask, XK_n,            spawn,          SHCMD("dmenuumount")  },
-	{ ControlMask|AltMask, XK_n,            spawn,          SHCMD("dmenuman")  },
+	{ ControlMask|AltMask, XK_k,            spawn,          SHCMD("dmenuman")  },
 	{ MODKEY,              XK_b,            togglebar,      {0} },
 	{ MODKEY|ShiftMask,    XK_b,            toggletopbar,   {0} },
 	{ MODKEY,              XK_j,            focusstack,     {.i = +1 } },
