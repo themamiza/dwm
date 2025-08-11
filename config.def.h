@@ -122,7 +122,7 @@ static const Key keys[] = {
         { MODKEY|ShiftMask,    XK_n,            spawn,          SHCMD("setbg ~/.local/share/wallpapers ") },
         { MODKEY|ShiftMask,    XK_slash,        spawn,          SHCMD("switchxkbmap") },
         { MODKEY,              XK_BackSpace,    spawn,          SHCMD("fzf-sysact") },
-        { MODKEY,              XK_r,            spawn,          SHCMD("$TERMINAL -e lfub -single") },
+        { MODKEY,              XK_r,            spawn,          SHCMD("$TERMINAL -e $TUIFM") },
         { MODKEY|ShiftMask,    XK_h,            spawn,          SHCMD("$TERMINAL -e htop") },
         { MODKEY|ShiftMask,    XK_i,            spawn,          SHCMD("$TERMINAL -e nmtui") },
         { MODKEY,              XK_g,            spawn,          SHCMD("thunar") },
