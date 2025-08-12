@@ -197,6 +197,10 @@ static const Key keys[] = {
         TAGKEYS(               XK_7,                      6)
         TAGKEYS(               XK_8,                      7)
         TAGKEYS(               XK_9,                      8)
+        { XK_NO_MOD,           XF86XK_AudioPlay,         spawn, SHCMD("playerctl play-pause") },
+        { XK_NO_MOD,           XF86XK_AudioPause,        spawn, SHCMD("playerctl play-pause") },
+        { XK_NO_MOD,           XF86XK_AudioPrev,         spawn, SHCMD("playerctl previous") },
+        { XK_NO_MOD,           XF86XK_AudioNext,         spawn, SHCMD("playerctl next") },
         { XK_NO_MOD,           XF86XK_AudioMute,         spawn, SHCMD("pamixer               -t  ; kill -44 $(pidof dwmblocks)") },
         { XK_NO_MOD,           XF86XK_AudioLowerVolume,  spawn, SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
         { XK_NO_MOD,           XF86XK_AudioRaiseVolume,  spawn, SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
@@ -210,12 +214,12 @@ static const Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
         /* click                event mask      button          function        argument */
-	{ ClkStatusText,        0,              Button1,        sigdwmblocks,   {.i = 1} },
-	{ ClkStatusText,        0,              Button2,        sigdwmblocks,   {.i = 2} },
-	{ ClkStatusText,        0,              Button3,        sigdwmblocks,   {.i = 3} },
-	{ ClkStatusText,        0,              Button4,        sigdwmblocks,   {.i = 4} },
-	{ ClkStatusText,        0,              Button5,        sigdwmblocks,   {.i = 5} },
-	{ ClkStatusText,        ShiftMask,      Button1,        sigdwmblocks,   {.i = 6} },
+        { ClkStatusText,        0,              Button1,        sigdwmblocks,   {.i = 1} },
+        { ClkStatusText,        0,              Button2,        sigdwmblocks,   {.i = 2} },
+        { ClkStatusText,        0,              Button3,        sigdwmblocks,   {.i = 3} },
+        { ClkStatusText,        0,              Button4,        sigdwmblocks,   {.i = 4} },
+        { ClkStatusText,        0,              Button5,        sigdwmblocks,   {.i = 5} },
+        { ClkStatusText,        ShiftMask,      Button1,        sigdwmblocks,   {.i = 6} },
         { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
         { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
         { ClkWinTitle,          0,              Button2,        zoom,           {0} },
