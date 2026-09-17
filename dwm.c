@@ -1124,7 +1124,7 @@ Atom
 getatomprop(Client *c, Atom prop)
 {
         int di;
-        unsigned long dl;
+        unsigned long nitems, dl;
         unsigned char *p = NULL;
         Atom da, atom = None;
 
@@ -1135,9 +1135,9 @@ getatomprop(Client *c, Atom prop)
                 req = xatom[XembedInfo];
 
         if (XGetWindowProperty(dpy, c->win, prop, 0L, sizeof atom, False, req,
-                               &da, &di, &dl, &dl, &p) == Success && p) {
+                               &da, &di, &nitems, &dl, &p) == Success && p) {
                 atom = *(Atom *)p;
-                if (da == xatom[XembedInfo] && dl == 2)
+                if (da == xatom[XembedInfo] && dl == 2 && nitems > 0)
                         atom = ((Atom *)p)[1];
                 XFree(p);
         }
